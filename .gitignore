@@ -1,0 +1,14 @@
+# Session / tooling state — never publish
+.claude/
+.audit-key
+audit.jsonl
+
+# Client-private materials — never publish
+uploads/
+
+# Build artifacts
+*.zip
+
+# OS noise
+Thumbs.db
+desktop.ini
