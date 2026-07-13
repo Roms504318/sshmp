@@ -5,6 +5,7 @@ audit.jsonl
 
 # Client-private materials — never publish
 uploads/
+proposal/
 
 # Build artifacts
 *.zip
