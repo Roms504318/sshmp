@@ -342,7 +342,7 @@
       <a href="#/second-floor" data-route="second-floor">Second Floor</a>
       <a href="#/exterior" data-route="exterior">Exterior</a>
     </nav>
-    <button class="cta" onclick="openDrawer('pr-open')">Request to Book</button>
+    <a class="cta" style="text-decoration:none" href="https://sshmp-platform.vercel.app/book">Reserve Online</a>
   </div>
 </header>
 
@@ -356,7 +356,7 @@
       <h1>New Orleans&rsquo; premier waterfront event space.</h1>
       <p>Waterfront events, private dining, and market experiences. Indoor and outdoor spaces designed for gatherings, leasing, and community programming on the lakefront.</p>
       <div class="btn-row">
-        <button class="cta" onclick="openDrawer('pr-open')">Request to Book</button>
+        <a class="cta" style="text-decoration:none" href="https://sshmp-platform.vercel.app/book">Reserve Online</a>
         <a class="btn-ghost" href="#/first-floor" onclick="return nav_('first-floor')">Explore the spaces</a>
       </div>
     </div>
@@ -479,7 +479,7 @@
         <div class="body">
           <h3>Main Hall</h3>
           <p>The first floor Marketplace. Vendor stalls and market energy by day, full hall events by night, with the stage at its center.</p>
-          <div class="note-box">Vendors: register or log in to check the vendor calendar for opportunities at the Marketplace.</div>
+          <div class="note-box">Vendors: <a href="https://sshmp-platform.vercel.app/login">register or log in</a> to check the vendor calendar for opportunities at the Marketplace.</div>
           <div class="tags"><span class="tag">Markets</span><span class="tag">Concerts</span><span class="tag">Community</span></div>
           <button class="select" onclick="openDrawer('mh1')">Check availability &amp; request</button>
         </div>
@@ -685,7 +685,7 @@
           <h3>Waterfront Promenade</h3>
           <p>The patio. One open space along the water for markets, receptions, and gatherings. Can be added to the Covered Bar and Grill, and the Covered Bar and Grill can be added to it.</p>
           <span class="plan-line">One layout: open space, placeholder plan</span>
-          <div class="note-box">Vendors: register or log in to check the vendor calendar for opportunities on the promenade.</div>
+          <div class="note-box">Vendors: <a href="https://sshmp-platform.vercel.app/login">register or log in</a> to check the vendor calendar for opportunities on the promenade.</div>
           <button class="select" onclick="openDrawer('prom')">Check availability &amp; request</button>
         </div>
       </div>
@@ -749,7 +749,10 @@
     <div class="logo-card"><img src="assets/logo-public-market-black.png" alt="The Public Market at South Shore Harbor"></div>
     <div class="ftxt">
       <b>South Shore Harbor Marketplace</b>. Waterfront events, private dining, and market experiences in New Orleans.<br>
-      Reserve online, request a tour, or reach the Event Management Design Team for custom events.<br>
+      <a href="https://sshmp-platform.vercel.app/book" style="color:var(--sand)">Reserve online</a> ·
+      <a href="https://sshmp-platform.vercel.app/info" style="color:var(--sand)">FAQ, rules &amp; policies</a> ·
+      <a href="https://sshmp-platform.vercel.app/gallery" style="color:var(--sand)">Gallery</a> ·
+      or reach the Event Management Design Team for custom events.<br>
       &copy; 2026 South Shore Harbor Marketplace.
     </div>
   </div>
@@ -800,17 +803,19 @@
 
 <script>
 /* ---------------- Data ---------------- */
+/* Live reservation platform: bookable spaces link straight to their real booking page. */
+const PLATFORM = 'https://sshmp-platform.vercel.app';
 const SPACES = {
-  'mh1':        {name:'Main Hall, First Floor', context:'First Floor, 11,120 SF', cap:null, rate:500, kind:'book'},
-  'pr-open':    {name:'Private Room, Open Floor Style', context:'First Floor, 1,628 SF', cap:100, rate:275, kind:'book'},
-  'pr-meeting': {name:'Private Room, Meeting Style',    context:'First Floor, 1,628 SF', cap:85,  rate:275, kind:'book'},
-  'pr-banquet': {name:'Private Room, Banquet Style',    context:'First Floor, 1,628 SF', cap:60,  rate:275, kind:'book'},
-  'ppr':        {name:'Patio Private Room', context:'First Floor, 975 SF, waterfront', cap:null, rate:200, kind:'book'},
-  'mh2-open':   {name:'Main Hall, Second Floor', context:'Second Floor, 4,965 SF', cap:null, rate:400, kind:'book'},
-  'balcony':    {name:'Private Sunset Balcony', context:'Second Floor, 742 SF', cap:null, rate:150, kind:'book'},
-  'prom':       {name:'Waterfront Promenade', context:'Exterior, 2,465 SF', cap:null, rate:250, kind:'book'},
-  'work':       {name:'The Lakeside Workroom', context:'Exterior, about 500 SF', cap:null, rate:100, kind:'book'},
-  'bar-gameday':{name:'Covered Bar and Grill, Game Day Reservation', context:'Exterior, 3,665 SF, limited availability', cap:null, rate:150, kind:'book'},
+  'mh1':        {name:'Main Hall, First Floor', context:'First Floor, 11,120 SF', cap:null, rate:500, kind:'book', platformId:'dd7285c9-efda-4db8-ad67-5e76dd505124'},
+  'pr-open':    {name:'Private Room, Open Floor Style', context:'First Floor, 1,628 SF', cap:100, rate:275, kind:'book', platformId:'cd554666-23ed-458d-b83a-f5bfeabedae5'},
+  'pr-meeting': {name:'Private Room, Meeting Style',    context:'First Floor, 1,628 SF', cap:85,  rate:275, kind:'book', platformId:'cd554666-23ed-458d-b83a-f5bfeabedae5'},
+  'pr-banquet': {name:'Private Room, Banquet Style',    context:'First Floor, 1,628 SF', cap:60,  rate:275, kind:'book', platformId:'cd554666-23ed-458d-b83a-f5bfeabedae5'},
+  'ppr':        {name:'Patio Private Room', context:'First Floor, 975 SF, waterfront', cap:null, rate:200, kind:'book', platformId:'40e62dfb-699d-4ca5-a9c8-23b71ec4d976'},
+  'mh2-open':   {name:'Main Hall, Second Floor', context:'Second Floor, 4,965 SF', cap:null, rate:400, kind:'book', platformId:'f0370ab6-db96-49fc-9112-e815d2043945'},
+  'balcony':    {name:'Private Sunset Balcony', context:'Second Floor, 742 SF', cap:null, rate:150, kind:'book', platformId:'4ecccc34-91d3-446e-a98a-32b3ef7810c8'},
+  'prom':       {name:'Waterfront Promenade', context:'Exterior, 2,465 SF', cap:null, rate:250, kind:'book', platformId:'f798781f-3c0d-42f5-b210-d047404cb3fd'},
+  'work':       {name:'The Lakeside Workroom', context:'Exterior, about 500 SF', cap:null, rate:100, kind:'book', platformId:'f5d27ee0-1551-488c-8ee4-09c2f4cc748b'},
+  'bar-gameday':{name:'Covered Bar and Grill, Game Day Reservation', context:'Exterior, 3,665 SF, limited availability', cap:null, rate:150, kind:'book', platformId:'d696f76e-ec73-412d-91bf-35133a5cf093'},
   'custom':     {name:'Event Management Design Team, Custom Events', context:'Tell us about your vision', kind:'inquire'}
 };
 
@@ -847,7 +852,12 @@ let selected = SPACES['pr-open'];
 function money(n){ return '$' + Math.round(n).toLocaleString(); }
 
 function openDrawer(key){
-  selected = SPACES[key] || selected;
+  const target = SPACES[key];
+  if(target && target.platformId){
+    window.location.href = PLATFORM + '/book/' + target.platformId;
+    return;
+  }
+  selected = target || selected;
   document.getElementById('selName').textContent = selected.name;
   document.getElementById('selContext').textContent = selected.context || 'Selected space';
   const book = selected.kind === 'book';
