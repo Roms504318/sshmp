@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>South Shore Harbor Marketplace — Waterfront Events, Private Dining &amp; Market Experiences</title>
+<title>South Shore Harbor Marketplace | Waterfront Events, Private Dining &amp; Market Experiences</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
@@ -58,11 +58,6 @@
   }
   .logo-link{display:flex;align-items:center;gap:12px;text-decoration:none}
   .logo-link img{height:44px;width:auto;display:block}
-  .demo-badge{
-    font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-    border:1px solid var(--line);color:var(--muted);
-    padding:4px 10px;border-radius:20px;white-space:nowrap;
-  }
   .spacer{flex:1}
   nav{display:flex;gap:2px;flex-wrap:wrap}
   nav a{
@@ -89,8 +84,7 @@
     position:absolute;inset:0;
     background:linear-gradient(180deg,rgba(251,249,245,.06) 26%,rgba(251,249,245,.6) 58%,rgba(251,249,245,.9) 80%,var(--paper) 100%);
   }
-  .hero .inner{text-shadow:0 1px 14px rgba(251,249,245,.85)}
-  .hero .inner{position:relative;width:100%;padding-bottom:46px}
+  .hero .inner{position:relative;width:100%;padding-bottom:46px;text-shadow:0 1px 14px rgba(251,249,245,.85)}
   .hero h1{font-size:clamp(34px,5vw,54px);max-width:640px}
   .hero p{max-width:560px;font-size:17px;color:var(--ink-soft);margin:16px 0 24px}
   .btn-row{display:flex;gap:12px;flex-wrap:wrap}
@@ -105,47 +99,90 @@
   .stats{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:34px 0 8px;background:var(--white)}
   .stats .s{flex:1;min-width:150px;padding:22px 24px;border-right:1px solid var(--line)}
   .stats .s:last-child{border-right:0}
-  .stats .k{font-family:var(--serif);font-size:clamp(20px,2.3vw,26px);color:var(--ink);white-space:nowrap}
+  .stats .k{font-family:var(--serif);font-size:clamp(19px,2.2vw,25px);color:var(--ink);white-space:nowrap}
   .stats .l{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px}
 
+  /* ---------- Custom event strip ---------- */
+  .custom-strip{
+    display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+    background:var(--cream);border:1px solid var(--line);border-radius:14px;
+    padding:14px 20px;margin:26px 0 6px;font-size:14.5px;color:var(--ink-soft);
+  }
+  .custom-strip button{
+    border:0;background:none;color:var(--teal-deep);font-weight:700;font-family:var(--sans);
+    font-size:14.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;
+  }
+
   /* ---------- Section heads ---------- */
-  .section{padding:54px 0 14px}
-  .section-head{max-width:640px;margin-bottom:30px}
+  .section{padding:48px 0 14px}
+  .section-head{max-width:660px;margin-bottom:28px}
   .section-head h2{font-size:clamp(26px,3.4vw,36px)}
   .section-head p{color:var(--ink-soft);margin:12px 0 0}
 
   /* ---------- Cards ---------- */
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:40px}
-  @media(max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:620px){.grid{grid-template-columns:1fr}}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:34px}
+  .grid.two{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:960px){.grid,.grid.two{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.grid,.grid.two{grid-template-columns:1fr}}
   .card{
     background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;
-    display:flex;flex-direction:column;transition:.2s;cursor:pointer;box-shadow:0 2px 10px rgba(29,67,86,.05);
+    display:flex;flex-direction:column;transition:.2s;box-shadow:0 2px 10px rgba(29,67,86,.05);
   }
-  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(54,117,136,.4)}
+  .card.click{cursor:pointer}
+  .card.click:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(54,117,136,.4)}
   .card .frame{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--cream)}
   .card .frame img{width:100%;height:100%;object-fit:cover;display:block}
-  .card .frame img.contain{object-fit:contain;padding:10px}
   .card .frame .logo-center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#EAF2F1,#D8E7E6)}
   .card .frame .logo-center img{width:56%;height:auto;object-fit:contain}
+  .ph-frame{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+    background:repeating-linear-gradient(45deg,var(--cream),var(--cream) 14px,#EFE7D4 14px,#EFE7D4 28px);
+  }
+  .card .frame .ph-frame img{width:38%;max-width:200px;height:auto;object-fit:contain;opacity:.45}
+  .ph-frame span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .status{
-    position:absolute;left:12px;top:12px;
+    position:absolute;left:12px;top:12px;z-index:2;
     font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
     background:rgba(255,255,255,.94);border:1px solid var(--line);color:var(--ink-soft);
     padding:5px 11px;border-radius:20px;
   }
   .status.open{color:var(--ok);border-color:rgba(46,125,79,.35)}
-  .status.soon{color:#8A6D2F;border-color:rgba(138,109,47,.3)}
-  .card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .status.addon{color:#8A6D2F;border-color:rgba(138,109,47,.3)}
+  .sf-badge{
+    position:absolute;right:12px;top:12px;z-index:2;text-align:right;
+    background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:10px;padding:7px 11px;
+  }
+  .sf-badge .n{font-family:var(--serif);font-size:17px;color:var(--ink);line-height:1.1}
+  .sf-badge .u{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:9px;flex:1}
   .card .body h3{font-size:21px}
-  .card .body p{margin:0;font-size:14px;color:var(--ink-soft);flex:1}
-  .card .go{font-size:13px;font-weight:700;color:var(--teal-deep)}
+  .card .body p{margin:0;font-size:14px;color:var(--ink-soft)}
+  .card .go{font-size:13px;font-weight:700;color:var(--teal-deep);margin-top:auto}
+  .note-box{
+    font-size:12.5px;color:var(--ink-soft);background:var(--paper);
+    border:1px solid var(--line);border-left:3px solid var(--green);
+    border-radius:10px;padding:10px 13px;
+  }
+  .plan-line{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:11.5px;font-weight:700;color:var(--ink-soft);
+    background:var(--paper);border:1px dashed rgba(29,67,86,.3);
+    border-radius:8px;padding:5px 10px;
+  }
+  .plan-line::before{content:"\25A6";color:var(--teal);font-size:12px}
+  .select{
+    border:1.5px solid var(--teal);background:transparent;color:var(--teal-deep);
+    font-weight:700;font-family:var(--sans);font-size:13.5px;padding:11px;border-radius:10px;cursor:pointer;transition:.15s;margin-top:auto;
+  }
+  .select:hover{background:var(--teal);color:#fff}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-size:11px;font-weight:700;color:var(--teal-deep);background:rgba(54,117,136,.08);border-radius:20px;padding:3px 11px}
 
-  /* ---------- Bar & Grill band ---------- */
+  /* ---------- Band ---------- */
   .band{
     background:linear-gradient(120deg,var(--ink) 0%,var(--teal-deep) 100%);
     color:#fff;border-radius:20px;overflow:hidden;position:relative;
-    display:flex;align-items:center;gap:34px;padding:38px 44px;margin:14px 0 60px;flex-wrap:wrap;
+    display:flex;align-items:center;gap:34px;padding:38px 44px;margin:14px 0 56px;flex-wrap:wrap;
   }
   .band img.badge{width:132px;height:132px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 6px 16px rgba(0,0,0,.25))}
   .band .btxt{flex:1;min-width:260px}
@@ -155,7 +192,7 @@
   .band .cta{background:var(--sand);color:var(--ink);box-shadow:none}
   .band .cta:hover{background:#F2E7C8}
 
-  /* ---------- Plates (watercolor treatment) ---------- */
+  /* ---------- Plates ---------- */
   .plate{
     background:var(--white);border:1px solid var(--line);border-radius:16px;
     padding:14px;box-shadow:var(--shadow);
@@ -168,8 +205,8 @@
     padding:12px 6px 2px;
   }
 
-  /* ---------- First floor legend ---------- */
-  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:26px 0 60px}
+  /* ---------- Legend chips ---------- */
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:26px 0 46px}
   .chip{
     background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
     cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:4px;
@@ -183,7 +220,7 @@
   .chip .st.open{color:var(--ok)}
   .chip .st.soon{color:#8A6D2F}
 
-  /* ---------- Private Room layouts ---------- */
+  /* ---------- Layout cards ---------- */
   .layouts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:8px}
   @media(max-width:700px){.layouts{grid-template-columns:1fr}.layout-card .art{aspect-ratio:auto;max-height:440px}.layout-card .art img{height:440px}}
   .layout-card{
@@ -201,18 +238,11 @@
   .cap-badge .u{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
   .layout-card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
   .layout-card h3{font-size:20px}
-  .tags{display:flex;flex-wrap:wrap;gap:6px}
-  .tag{font-size:11px;font-weight:700;color:var(--teal-deep);background:rgba(54,117,136,.08);border-radius:20px;padding:3px 11px}
   .rate-line{font-size:13px;color:var(--muted);margin-top:auto}
   .rate-line b{color:var(--ink)}
-  .select{
-    border:1.5px solid var(--teal);background:transparent;color:var(--teal-deep);
-    font-weight:700;font-family:var(--sans);font-size:13.5px;padding:11px;border-radius:10px;cursor:pointer;transition:.15s;
-  }
-  .select:hover{background:var(--teal);color:#fff}
 
   /* ---------- Steps strip ---------- */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 60px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 40px}
   @media(max-width:760px){.steps{grid-template-columns:1fr}}
   .step{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
   .step .num{
@@ -223,20 +253,14 @@
   .step b{display:block;margin-bottom:3px}
   .step span{font-size:13.5px;color:var(--ink-soft)}
 
-  /* ---------- Two-column feature ---------- */
-  .feature{display:grid;grid-template-columns:minmax(300px,460px) 1fr;gap:44px;align-items:center;padding-bottom:60px}
+  /* ---------- Feature ---------- */
+  .feature{display:grid;grid-template-columns:minmax(300px,460px) 1fr;gap:44px;align-items:center;padding-bottom:46px}
   @media(max-width:880px){.feature{grid-template-columns:1fr}.feature .plate{max-width:520px}}
-  .pills{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 22px}
-  .pill{
-    font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-    color:#8A6D2F;background:rgba(233,217,179,.4);border:1px solid rgba(138,109,47,.25);
-    padding:6px 13px;border-radius:20px;
-  }
 
-  /* ---------- Bar & Grill feature ---------- */
+  /* ---------- Bar feature ---------- */
   .bar-feature{
     background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);
-    display:flex;gap:36px;align-items:center;padding:36px 40px;margin:10px 0 60px;flex-wrap:wrap;
+    display:flex;gap:36px;align-items:center;padding:36px 40px;margin:10px 0 26px;flex-wrap:wrap;
   }
   .bar-feature img.badge{width:150px;height:150px;object-fit:contain;flex-shrink:0}
   .bar-feature .btxt{flex:1;min-width:260px}
@@ -289,32 +313,10 @@
   .book-btn.sent{background:var(--ok)}
   .disclaim{font-size:10.5px;color:var(--muted);text-align:center;margin-top:11px;letter-spacing:.03em}
 
-  /* ---------- Modal ---------- */
-  .modal-veil{position:fixed;inset:0;background:rgba(29,67,86,.42);z-index:100;display:none;align-items:center;justify-content:center;padding:22px}
-  .modal-veil.open{display:flex}
-  .modal{
-    background:var(--white);border-radius:18px;max-width:520px;width:100%;overflow:hidden;
-    box-shadow:0 24px 70px rgba(29,67,86,.3);animation:pop .18s ease;
-  }
-  @keyframes pop{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
-  .modal .mart{aspect-ratio:16/9;background:var(--cream)}
-  .modal .mart img{width:100%;height:100%;object-fit:cover;display:block}
-  .modal .mbody{padding:26px 28px 28px}
-  .modal .mline{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A6D2F;margin-bottom:8px}
-  .modal h3{font-size:24px;margin-bottom:4px}
-  .modal .msf{font-size:12.5px;color:var(--muted);margin-bottom:12px}
-  .modal p{font-size:14.5px;color:var(--ink-soft);margin:0 0 20px}
-  .modal .mrow{display:flex;gap:10px;flex-wrap:wrap}
-  .modal .btn-ghost{font-size:13px;padding:10px 18px}
-  .modal .cta{font-size:13px}
-
   /* ---------- Page headers ---------- */
-  .page-head{padding:52px 0 30px;max-width:680px}
+  .page-head{padding:52px 0 26px;max-width:680px}
   .page-head h1{font-size:clamp(30px,4.2vw,44px)}
   .page-head p{color:var(--ink-soft);font-size:16.5px;margin:14px 0 0}
-
-  /* ---------- Closer image ---------- */
-  .closer{margin:10px 0 0}
 
   @media(max-width:700px){
     .bar{padding:10px 16px;gap:10px}
@@ -333,14 +335,12 @@
     <a class="logo-link" href="#/home" onclick="return nav_('home')">
       <img src="assets/logo-public-market-black.png" alt="The Public Market at South Shore Harbor">
     </a>
-    <span class="demo-badge">Concept Preview</span>
     <span class="spacer"></span>
     <nav id="mainNav">
       <a href="#/home" data-route="home" class="active">Home</a>
       <a href="#/first-floor" data-route="first-floor">First Floor</a>
-      <a href="#/private-room" data-route="private-room">Private Room</a>
       <a href="#/second-floor" data-route="second-floor">Second Floor</a>
-      <a href="#/outdoors" data-route="outdoors">Outdoors &amp; Bar</a>
+      <a href="#/exterior" data-route="exterior">Exterior</a>
     </nav>
     <button class="cta" onclick="openDrawer('pr-open')">Request to Book</button>
   </div>
@@ -352,9 +352,9 @@
     <img class="bg" src="assets/rendering-entrance.jpg" alt="Palm-lined arrival drive at South Shore Harbor Marketplace">
     <div class="veil"></div>
     <div class="inner wrap">
-      <div class="eyebrow">South Shore Harbor Marketplace · New Orleans</div>
+      <div class="eyebrow">South Shore Harbor Marketplace &middot; New Orleans</div>
       <h1>New Orleans&rsquo; premier waterfront event space.</h1>
-      <p>Waterfront events, private dining, and market experiences — indoor and outdoor spaces designed for gatherings, leasing, and community programming on the lakefront.</p>
+      <p>Waterfront events, private dining, and market experiences. Indoor and outdoor spaces designed for gatherings, leasing, and community programming on the lakefront.</p>
       <div class="btn-row">
         <button class="cta" onclick="openDrawer('pr-open')">Request to Book</button>
         <a class="btn-ghost" href="#/first-floor" onclick="return nav_('first-floor')">Explore the spaces</a>
@@ -364,93 +364,63 @@
 
   <div class="wrap">
     <div class="stats">
-      <div class="s"><div class="k">Up to 100</div><div class="l">Guests · Private Room</div></div>
-      <div class="s"><div class="k">3,600 SF</div><div class="l">Bar &amp; Grill</div></div>
-      <div class="s"><div class="k">Two Floors</div><div class="l">Event &amp; Market Space</div></div>
-      <div class="s"><div class="k">Waterfront</div><div class="l">Grounds &amp; Promenade</div></div>
+      <div class="s"><div class="k">6+</div><div class="l">Bookable Spaces</div></div>
+      <div class="s"><div class="k">26,080 SF</div><div class="l">Combined</div></div>
+      <div class="s"><div class="k">Reserve</div><div class="l">Online</div></div>
+      <div class="s"><div class="k">Waterfront</div><div class="l">Bar &amp; Grill Patio</div></div>
+    </div>
+
+    <div class="custom-strip">
+      Planning a custom event?
+      <button onclick="openDrawer('custom')">Click here</button>
+      to reach the Event Management Design Team.
     </div>
 
     <div class="section">
       <div class="section-head">
         <h2>Explore the spaces</h2>
-        <p>From an intimate private dinner to a full waterfront festival — the Marketplace is being designed so every space can host, lease, and welcome the public.</p>
+        <p>Two floors and a working waterfront. Every space can host, and every space can be reserved online.</p>
       </div>
       <div class="grid">
-        <div class="card" onclick="nav_('private-room')">
+        <div class="card click" onclick="nav_('first-floor')">
           <div class="frame">
-            <img src="assets/private-room-banquet.jpg" alt="Private Room banquet layout">
-            <span class="status open">Now accepting requests</span>
-          </div>
-          <div class="body">
-            <h3>The Private Room</h3>
-            <p>Our most flexible space — private dinners, meetings, and receptions for up to 100 guests, three ways.</p>
-            <span class="go">View layouts &amp; request a date →</span>
-          </div>
-        </div>
-        <div class="card" onclick="nav_('first-floor')">
-          <div class="frame">
-            <img src="assets/plan-first-floor.jpg" alt="Overall first floor plan">
-            <span class="status">Interactive plan</span>
+            <img src="assets/plan-first-floor.jpg" alt="First floor plan">
           </div>
           <div class="body">
             <h3>The First Floor</h3>
-            <p>Market hall, Bar &amp; Grill, private rooms, and the stage — see how the whole floor comes together.</p>
-            <span class="go">Explore the floor plan →</span>
+            <p>The Marketplace hall, the Private Room, the VIP Room, and the Patio Private Room.</p>
+            <span class="go">Explore the first floor &rarr;</span>
           </div>
         </div>
-        <div class="card" onclick="nav_('second-floor')">
+        <div class="card click" onclick="nav_('second-floor')">
           <div class="frame">
-            <img src="assets/rendering-oasis.jpg" alt="Second floor evening event rendering" style="object-position:center 30%">
-            <span class="status soon">Coming soon</span>
+            <img src="assets/rendering-oasis.jpg" alt="Second floor evening event" style="object-position:center 30%">
           </div>
           <div class="body">
             <h3>The Second Floor</h3>
-            <p>A signature setting above the water for weddings, galas, and celebrations.</p>
-            <span class="go">Preview the vision →</span>
+            <p>The Main Hall above the water, the Private Sunset Balcony, and the Powder Room.</p>
+            <span class="go">Explore the second floor &rarr;</span>
           </div>
         </div>
-        <div class="card" onclick="openModal('market')">
+        <div class="card click" onclick="nav_('exterior')">
           <div class="frame">
-            <img src="assets/rendering-market.jpg" alt="Interior market hall rendering">
-            <span class="status soon">Leasing coming soon</span>
+            <img src="assets/rendering-patio.jpg" alt="Waterfront promenade">
           </div>
           <div class="body">
-            <h3>The Public Market</h3>
-            <p>New Orleans&rsquo; premier waterfront fresh market — vendor stalls, pop-ups, and local makers.</p>
-            <span class="go">Vendor opportunities →</span>
-          </div>
-        </div>
-        <div class="card" onclick="nav_('outdoors')">
-          <div class="frame">
-            <img src="assets/rendering-patio.jpg" alt="Waterfront promenade rendering">
-            <span class="status soon">In development</span>
-          </div>
-          <div class="body">
-            <h3>Outdoor Grounds</h3>
-            <p>The promenade, lawn, and open-air venues — programmed for markets, festivals, and lakefront days.</p>
-            <span class="go">See the grounds →</span>
-          </div>
-        </div>
-        <div class="card" onclick="nav_('outdoors', 'bargrill')">
-          <div class="frame">
-            <div class="logo-center"><img src="assets/logo-bar-grill.png" alt="South Shore Harbor Bar & Grill"></div>
-            <span class="status open">Reservations opening</span>
-          </div>
-          <div class="body">
-            <h3>Bar &amp; Grill</h3>
-            <p>Waterfront dining and game-day energy, opening onto the patio and the water.</p>
-            <span class="go">Reserve game day →</span>
+            <h3>The Exterior</h3>
+            <p>The Waterfront Promenade, the Lakeside Workroom, and the Covered Bar and Grill.</p>
+            <span class="go">Explore the exterior &rarr;</span>
           </div>
         </div>
       </div>
 
       <div class="band">
-        <img class="badge" src="assets/logo-bar-grill.png" alt="South Shore Harbor Bar & Grill badge">
+        <img class="badge" src="assets/logo-bar-grill.png" alt="South Shore Harbor Covered Bar and Grill badge">
         <div class="btxt">
-          <div class="eyebrow">Football Season · Limited Reservations</div>
+          <div class="eyebrow">Football Season &middot; Limited Reservations</div>
           <h2>Game day belongs on the water.</h2>
-          <p>Book the South Shore Harbor Bar &amp; Grill for the upcoming football season — private tables, group packages, and every game on the screens. Limited reservations available.</p>
-          <button class="cta" onclick="openDrawer('bar-gameday')">Reserve your game-day experience</button>
+          <p>Book the Covered Bar and Grill for the upcoming football season. Private tables, group packages, and every game on the screens. Limited reservations available.</p>
+          <button class="cta" onclick="openDrawer('bar-gameday')">Reserve your game day experience</button>
         </div>
       </div>
     </div>
@@ -463,44 +433,100 @@
     <div class="page-head">
       <div class="eyebrow">Explore the Spaces</div>
       <h1>The First Floor</h1>
-      <p>The heart of the Marketplace — the market hall, Bar &amp; Grill, and a family of private rooms, all opening toward the water. Select any space to see its status and availability.</p>
+      <p>The heart of the Marketplace. The market hall, a family of private rooms, and direct access to the waterfront. Select any space to see details and request a date.</p>
     </div>
 
     <div class="plate">
-      <div class="art"><img src="assets/plan-first-floor.jpg" alt="Overall first floor plan with color-coded spaces"></div>
-      <div class="caption"><span>Overall First Floor Plan</span><span>Scottmoore · Architect of Record</span></div>
+      <div class="art"><img src="assets/plan-first-floor.jpg" alt="First floor plan with color-coded spaces"></div>
+      <div class="caption"><span>First Floor Plan</span><span>South Shore Harbor Marketplace</span></div>
     </div>
 
     <div class="legend">
+      <div class="chip" onclick="scrollToId('ff-mainhall')">
+        <div class="row1"><span class="dot" style="background:#ACA7E3"></span><span class="nm">Main Hall</span></div>
+        <span class="sf">11,120 SF &middot; the Marketplace</span>
+        <span class="st open">Bookable</span>
+      </div>
       <div class="chip" onclick="nav_('private-room')">
         <div class="row1"><span class="dot" style="background:#93BE94"></span><span class="nm">Private Room</span></div>
-        <span class="sf">1,600 SF · seats up to 100</span>
-        <span class="st open">Available for booking →</span>
+        <span class="sf">1,628 SF &middot; three layouts</span>
+        <span class="st open">Bookable &rarr;</span>
       </div>
-      <div class="chip" onclick="openModal('bar')">
-        <div class="row1"><span class="dot" style="background:#F2C089"></span><span class="nm">Bar &amp; Grill</span></div>
-        <span class="sf">3,600 SF · indoor + patio</span>
-        <span class="st open">Game-day reservations opening</span>
-      </div>
-      <div class="chip" onclick="openModal('main-hall')">
-        <div class="row1"><span class="dot" style="background:#ACA7E3"></span><span class="nm">Main Hall</span></div>
-        <span class="sf">Stage · concerts · community events</span>
-        <span class="st soon">More details coming soon</span>
-      </div>
-      <div class="chip" onclick="openModal('pr2')">
-        <div class="row1"><span class="dot" style="background:#E7A9E2"></span><span class="nm">Private Room #2</span></div>
-        <span class="sf">940 SF · waterfront corner</span>
-        <span class="st soon">Leasing opportunities coming soon</span>
-      </div>
-      <div class="chip" onclick="openModal('vip')">
+      <div class="chip" onclick="scrollToId('ff-vip')">
         <div class="row1"><span class="dot" style="background:#D96C6C"></span><span class="nm">VIP Room</span></div>
-        <span class="sf">Stage-side lounge</span>
-        <span class="st soon">Future programming in development</span>
+        <span class="sf">520 SF &middot; two bathrooms</span>
+        <span class="st soon">Add-on only</span>
       </div>
-      <div class="chip" onclick="openModal('market')">
-        <div class="row1"><span class="dot" style="background:#8FB6C9"></span><span class="nm">The Public Market</span></div>
-        <span class="sf">Vendor stalls &amp; pop-ups</span>
-        <span class="st soon">Vendor leasing coming soon</span>
+      <div class="chip" onclick="scrollToId('ff-patio-private')">
+        <div class="row1"><span class="dot" style="background:#E7A9E2"></span><span class="nm">Patio Private Room</span></div>
+        <span class="sf">975 SF &middot; waterfront</span>
+        <span class="st open">Bookable</span>
+      </div>
+      <div class="chip" onclick="nav_('exterior', 'bargrill')">
+        <div class="row1"><span class="dot" style="background:#F2C089"></span><span class="nm">Covered Bar and Grill</span></div>
+        <span class="sf">3,665 SF &middot; see Exterior</span>
+        <span class="st open">Bookable &rarr;</span>
+      </div>
+    </div>
+
+    <div class="grid two" style="padding-bottom:50px">
+      <div class="card" id="ff-mainhall">
+        <div class="frame">
+          <img src="assets/rendering-market.jpg" alt="Main Hall marketplace">
+          <span class="status open">Bookable</span>
+          <span class="sf-badge"><span class="n">11,120</span> <span class="u">SF</span></span>
+        </div>
+        <div class="body">
+          <h3>Main Hall</h3>
+          <p>The first floor Marketplace. Vendor stalls and market energy by day, full hall events by night, with the stage at its center.</p>
+          <div class="note-box">Vendors: register or log in to check the vendor calendar for opportunities at the Marketplace.</div>
+          <div class="tags"><span class="tag">Markets</span><span class="tag">Concerts</span><span class="tag">Community</span></div>
+          <button class="select" onclick="openDrawer('mh1')">Check availability &amp; request</button>
+        </div>
+      </div>
+
+      <div class="card click" id="ff-private" onclick="nav_('private-room')">
+        <div class="frame">
+          <img src="assets/private-room-banquet.jpg" alt="Private Room banquet layout">
+          <span class="status open">Bookable</span>
+          <span class="sf-badge"><span class="n">1,628</span> <span class="u">SF</span></span>
+        </div>
+        <div class="body">
+          <h3>Private Room</h3>
+          <p>Our most flexible room. Three ready layouts for dinners, meetings, and receptions for up to 100 guests.</p>
+          <div class="tags"><span class="tag">Dinners</span><span class="tag">Meetings</span><span class="tag">Receptions</span></div>
+          <span class="go">View layouts &amp; request a date &rarr;</span>
+        </div>
+      </div>
+
+      <div class="card" id="ff-vip">
+        <div class="frame">
+          <div class="ph-frame"><img src="assets/logo-public-market-black.png" alt=""><span>Photography coming soon</span></div>
+          <span class="status addon">Add-on only</span>
+          <span class="sf-badge"><span class="n">520</span> <span class="u">SF</span></span>
+        </div>
+        <div class="body">
+          <h3>VIP Room</h3>
+          <p>A private suite with two bathrooms. Add it to any other space when it is open for your block. Wristbands required for access.</p>
+          <span class="plan-line">Suite layout, placeholder plan</span>
+          <div class="tags"><span class="tag">Add-on</span><span class="tag">Artists</span><span class="tag">Hosts</span></div>
+          <button class="select" onclick="openDrawer('custom')">Ask about adding the VIP Room</button>
+        </div>
+      </div>
+
+      <div class="card" id="ff-patio-private">
+        <div class="frame">
+          <div class="ph-frame"><img src="assets/logo-public-market-black.png" alt=""><span>Photography coming soon</span></div>
+          <span class="status open">Bookable</span>
+          <span class="sf-badge"><span class="n">975</span> <span class="u">SF</span></span>
+        </div>
+        <div class="body">
+          <h3>Patio Private Room</h3>
+          <p>One open floor plan layout with direct patio access, right on the waterfront.</p>
+          <span class="plan-line">One layout: open floor plan, placeholder plan</span>
+          <div class="tags"><span class="tag">Open floor</span><span class="tag">Patio access</span><span class="tag">Waterfront</span></div>
+          <button class="select" onclick="openDrawer('ppr')">Check availability &amp; request</button>
+        </div>
       </div>
     </div>
   </div>
@@ -510,58 +536,60 @@
 <section class="page" id="page-private-room">
   <div class="wrap">
     <div class="page-head">
-      <div class="eyebrow">First Floor · Now Accepting Requests</div>
+      <div class="eyebrow"><a href="#/first-floor" onclick="return nav_('first-floor')" style="text-decoration:none">First Floor</a> &middot; Now Accepting Requests</div>
       <h1>The Private Room</h1>
-      <p>A 1,600-square-foot flexible room just off the main hall, with dedicated access and direct service from the kitchen. Set it for a seated banquet, a working session, or an open reception — then request your date.</p>
+      <p>A 1,628 square foot flexible room just off the main hall, with dedicated access and direct service from the kitchen. Set it for a seated banquet, a working session, or an open reception, then request your date.</p>
     </div>
 
     <div class="layouts">
       <div class="layout-card">
         <div class="art">
-          <img src="assets/private-room-open.jpg" alt="Private Room — open floor layout">
+          <img src="assets/private-room-open.jpg" alt="Private Room, open floor layout">
           <div class="cap-badge"><div class="n">100</div><div class="u">max guests</div></div>
         </div>
         <div class="body">
           <h3>Open Floor Style</h3>
           <div class="tags"><span class="tag">Receptions</span><span class="tag">Cocktail</span><span class="tag">Pop-ups</span></div>
-          <div class="rate-line">Half &amp; full-day bookings · <b>Rate to be confirmed</b></div>
+          <div class="rate-line">Half and full day bookings &middot; <b>Rate to be confirmed</b></div>
           <button class="select" onclick="openDrawer('pr-open')">Select &amp; request this layout</button>
         </div>
       </div>
       <div class="layout-card">
         <div class="art">
-          <img src="assets/private-room-meeting.jpg" alt="Private Room — meeting style layout">
+          <img src="assets/private-room-meeting.jpg" alt="Private Room, meeting style layout">
           <div class="cap-badge"><div class="n">85</div><div class="u">approx. seats</div></div>
         </div>
         <div class="body">
           <h3>Meeting Style</h3>
           <div class="tags"><span class="tag">Meetings</span><span class="tag">Presentations</span><span class="tag">Workshops</span></div>
-          <div class="rate-line">Half &amp; full-day bookings · <b>Rate to be confirmed</b></div>
+          <div class="rate-line">Half and full day bookings &middot; <b>Rate to be confirmed</b></div>
           <button class="select" onclick="openDrawer('pr-meeting')">Select &amp; request this layout</button>
         </div>
       </div>
       <div class="layout-card">
         <div class="art">
-          <img src="assets/private-room-banquet.jpg" alt="Private Room — banquet seating layout">
+          <img src="assets/private-room-banquet.jpg" alt="Private Room, banquet seating layout">
           <div class="cap-badge"><div class="n">60</div><div class="u">approx. seats</div></div>
         </div>
         <div class="body">
           <h3>Banquet Style</h3>
           <div class="tags"><span class="tag">Dinners</span><span class="tag">Celebrations</span><span class="tag">Rehearsals</span></div>
-          <div class="rate-line">Half &amp; full-day bookings · <b>Rate to be confirmed</b></div>
+          <div class="rate-line">Half and full day bookings &middot; <b>Rate to be confirmed</b></div>
           <button class="select" onclick="openDrawer('pr-banquet')">Select &amp; request this layout</button>
         </div>
       </div>
     </div>
 
     <div class="steps">
-      <div class="step"><div class="num">1</div><b>Pick your layout</b><span>Open floor, meeting, or banquet — configured by our team before you arrive.</span></div>
+      <div class="step"><div class="num">1</div><b>Pick your layout</b><span>Open floor, meeting, or banquet. Our team sets the room before you arrive.</span></div>
       <div class="step"><div class="num">2</div><b>Request your date</b><span>Send your date, hours, and guest count. We confirm availability within one business day.</span></div>
-      <div class="step"><div class="num">3</div><b>Reserve with a deposit</b><span>A simple deposit holds your date — the balance is settled at your event.</span></div>
+      <div class="step"><div class="num">3</div><b>Reserve with a deposit</b><span>A simple deposit holds your date. The balance is settled before your event.</span></div>
     </div>
 
-    <div class="section-head" style="padding-bottom:50px">
-      <p style="font-size:14px"><b>Also on the first floor:</b> Main Hall, Private Room #2, and the VIP Room — leasing opportunities coming soon. <a href="#/first-floor" onclick="return nav_('first-floor')">See the full floor plan</a>.</p>
+    <div class="custom-strip" style="margin-bottom:50px">
+      Planning a custom event?
+      <button onclick="openDrawer('custom')">Click here</button>
+      to reach the Event Management Design Team.
     </div>
   </div>
 </section>
@@ -570,76 +598,148 @@
 <section class="page" id="page-second-floor">
   <div class="wrap">
     <div class="page-head">
-      <div class="eyebrow">Second Floor · Signature Events</div>
-      <h1>Host your upcoming wedding at South Shore Harbor Marketplace.</h1>
+      <div class="eyebrow">Explore the Spaces</div>
+      <h1>The Second Floor</h1>
+      <p>Dinner and dancing above the water. The Main Hall, the Private Sunset Balcony, and the Powder Room, with a warming kitchen and private restrooms on the floor.</p>
     </div>
+
     <div class="feature">
       <div class="plate">
-        <div class="art"><img src="assets/rendering-oasis.jpg" alt="Second floor evening reception rendering — dinner and dancing under string lights"></div>
-        <div class="caption"><span>The Second Floor · Concept Rendering</span><span>Design Study</span></div>
+        <div class="art"><img src="assets/rendering-oasis.jpg" alt="Second floor evening reception with dinner and dancing"></div>
+        <div class="caption"><span>The Second Floor</span><span>South Shore Harbor Marketplace</span></div>
       </div>
       <div>
-        <p style="font-size:17px;color:var(--ink-soft)">The second floor is being designed as the Marketplace&rsquo;s signature evening venue — dinner and dancing over the water, string lights in the rafters, a stage for the band, and room for everyone on your list.</p>
-        <div class="pills">
-          <span class="pill">Website design in progress</span>
-          <span class="pill">Future programming in development</span>
-        </div>
-        <p style="font-size:14.5px;color:var(--ink-soft)">Full layouts, capacities, and rates will be published as the design is completed. Early inquiries are welcome — dates are already being discussed for the coming seasons.</p>
+        <p style="font-size:17px;color:var(--ink-soft)">Host your upcoming wedding at South Shore Harbor Marketplace. String lights in the rafters, a stage for the band, sunset over the harbor, and room for everyone on your list.</p>
         <div class="btn-row" style="margin-top:20px">
-          <button class="cta" onclick="openDrawer('second-floor')">Start a wedding or event inquiry</button>
+          <button class="cta" onclick="openDrawer('mh2-open')">Request a date</button>
+          <button class="btn-ghost" onclick="openDrawer('custom')">Plan a custom event</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" style="padding-bottom:50px">
+      <div class="card">
+        <div class="frame">
+          <img src="assets/rendering-oasis.jpg" alt="Second floor Main Hall" style="object-position:center 20%">
+          <span class="status open">Bookable</span>
+          <span class="sf-badge"><span class="n">4,965</span> <span class="u">SF</span></span>
+        </div>
+        <div class="body">
+          <h3>Main Hall</h3>
+          <p>Open, meeting, and banquet layouts, the same set as the Private Room. Warming kitchen in the space and private restrooms on the floor. The Powder Room and the Private Sunset Balcony can be added when open.</p>
+          <span class="plan-line">Three layouts: open, meeting, banquet, placeholder plans</span>
+          <div class="tags"><span class="tag">Weddings</span><span class="tag">Galas</span><span class="tag">Banquets</span></div>
+          <button class="select" onclick="openDrawer('mh2-open')">Check availability &amp; request</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="frame">
+          <div class="ph-frame"><img src="assets/logo-public-market-black.png" alt=""><span>Photography coming soon</span></div>
+          <span class="status open">Bookable &middot; also an add-on</span>
+          <span class="sf-badge"><span class="n">742</span> <span class="u">SF</span></span>
+        </div>
+        <div class="body">
+          <h3>Private Sunset Balcony</h3>
+          <p>Tables and chairs over the water, facing the sunset. Book it on its own, or add it to a Main Hall booking when it is open for your block.</p>
+          <span class="plan-line">One layout: tables and chairs, placeholder plan</span>
+          <div class="tags"><span class="tag">Sunset</span><span class="tag">Cocktail hours</span><span class="tag">Add-on</span></div>
+          <button class="select" onclick="openDrawer('balcony')">Check availability &amp; request</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="frame">
+          <div class="ph-frame"><img src="assets/logo-public-market-black.png" alt=""><span>Photography coming soon</span></div>
+          <span class="status addon">Add-on only</span>
+        </div>
+        <div class="body">
+          <h3>Powder Room</h3>
+          <p>A private preparation suite for wedding parties and hosts. Add it to a Second Floor booking when it is open for your block.</p>
+          <span class="plan-line">Suite layout, placeholder plan</span>
+          <div class="tags"><span class="tag">Add-on</span><span class="tag">Wedding parties</span></div>
+          <button class="select" onclick="openDrawer('custom')">Ask about adding the Powder Room</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= OUTDOORS & BAR ================= -->
-<section class="page" id="page-outdoors">
+<!-- ================= EXTERIOR ================= -->
+<section class="page" id="page-exterior">
   <div class="wrap">
     <div class="page-head">
-      <div class="eyebrow">Outdoors &amp; Waterfront</div>
-      <h1>The grounds, the promenade, the water.</h1>
-      <p>Indoor and outdoor spaces designed for gatherings, leasing, and community programming — from weekly markets on the promenade to festival weekends on the grounds.</p>
+      <div class="eyebrow">Explore the Spaces</div>
+      <h1>The Exterior</h1>
+      <p>The working waterfront. The promenade, an open air workroom, and the Covered Bar and Grill, all steps from the water.</p>
     </div>
 
-    <div class="grid" style="grid-template-columns:repeat(2,1fr)" id="outdoorGrid">
-      <div class="card" onclick="openModal('promenade')">
+    <div class="grid" style="padding-bottom:8px">
+      <div class="card">
         <div class="frame">
           <img src="assets/rendering-patio.jpg" alt="Waterfront promenade with market stalls">
-          <span class="status soon">Leasing coming soon</span>
+          <span class="status open">Bookable</span>
+          <span class="sf-badge"><span class="n">2,465</span> <span class="u">SF</span></span>
         </div>
         <div class="body">
-          <h3>Waterfront Promenade &amp; Market Stalls</h3>
-          <p>Vendor stalls and pop-ups along the water&rsquo;s edge — the open-air side of the Public Market.</p>
-          <span class="go">Leasing opportunities →</span>
+          <h3>Waterfront Promenade</h3>
+          <p>The patio. One open space along the water for markets, receptions, and gatherings. Can be added to the Covered Bar and Grill, and the Covered Bar and Grill can be added to it.</p>
+          <span class="plan-line">One layout: open space, placeholder plan</span>
+          <div class="note-box">Vendors: register or log in to check the vendor calendar for opportunities on the promenade.</div>
+          <button class="select" onclick="openDrawer('prom')">Check availability &amp; request</button>
         </div>
       </div>
-      <div class="card" onclick="openModal('workroom')">
+
+      <div class="card">
         <div class="frame">
-          <img src="assets/rendering-remote-working.jpg" alt="Open-air lakeside workroom rendering" style="object-position:center 55%">
-          <span class="status soon">In development</span>
+          <img src="assets/rendering-remote-working.jpg" alt="Lakeside open air workroom" style="object-position:center 55%">
+          <span class="status open">Bookable</span>
+          <span class="sf-badge"><span class="n">~500</span> <span class="u">SF</span></span>
         </div>
         <div class="body">
           <h3>The Lakeside Workroom</h3>
-          <p>Open-air workspace with coffee, shade, and the water — future daytime programming for the neighborhood.</p>
-          <span class="go">Future programming →</span>
+          <p>Open to everyone as a shared working space during normal business hours, and bookable for private events. A private screen and speakers are available, outdoor power is ready, and seating is provided. Catering can be ordered ahead from the Covered Bar and Grill.</p>
+          <span class="plan-line">One layout: tables and chairs, placeholder plan</span>
+          <div class="tags"><span class="tag">Workdays</span><span class="tag">Private events</span><span class="tag">Catering</span></div>
+          <button class="select" onclick="openDrawer('work')">Check availability &amp; request</button>
+        </div>
+      </div>
+
+      <div class="card" id="bargrill-card">
+        <div class="frame">
+          <div class="logo-center"><img src="assets/logo-bar-grill.png" alt="South Shore Harbor Covered Bar and Grill"></div>
+          <span class="status open">Bookable</span>
+          <span class="sf-badge"><span class="n">3,665</span> <span class="u">SF</span></span>
+        </div>
+        <div class="body">
+          <h3>Covered Bar and Grill</h3>
+          <p>Waterfront dining under cover, with a stage. One as-is furniture layout, with custom setups available through the Event Management Design Team. The Waterfront Promenade can be added to this space, and this space can be added to the promenade.</p>
+          <span class="plan-line">One layout: as-is furniture, custom setups available</span>
+          <div class="tags"><span class="tag">Stage</span><span class="tag">Game day</span><span class="tag">Waterfront</span></div>
+          <button class="select" onclick="openDrawer('bar-gameday')">Check availability &amp; request</button>
         </div>
       </div>
     </div>
 
     <div class="bar-feature" id="bargrill">
-      <img class="badge" src="assets/logo-bar-grill.png" alt="South Shore Harbor Bar & Grill badge">
+      <img class="badge" src="assets/logo-bar-grill.png" alt="South Shore Harbor Covered Bar and Grill badge">
       <div class="btxt">
-        <div class="eyebrow" style="margin-bottom:8px">Football Season · Limited Reservations</div>
-        <h2 style="font-size:clamp(24px,3vw,32px)">South Shore Harbor Bar &amp; Grill</h2>
-        <p style="color:var(--ink-soft);margin:10px 0 18px;max-width:560px">Waterfront dining, cold drinks, and every game on the screens — 3,600 square feet opening onto the patio and the promenade. Book now for the upcoming football season; limited reservations available.</p>
-        <button class="cta" onclick="openDrawer('bar-gameday')">Reserve your waterfront game-day experience</button>
+        <div class="eyebrow" style="margin-bottom:8px">Football Season &middot; Limited Reservations</div>
+        <h2 style="font-size:clamp(24px,3vw,32px)">Covered Bar and Grill</h2>
+        <p style="color:var(--ink-soft);margin:10px 0 18px;max-width:560px">Cold drinks, every game on the screens, and the water right there. Book now for the upcoming football season. Limited reservations available.</p>
+        <button class="cta" onclick="openDrawer('bar-gameday')">Reserve your waterfront game day experience</button>
       </div>
     </div>
 
-    <div class="plate closer" style="margin-bottom:60px">
+    <div class="custom-strip">
+      Planning a custom event?
+      <button onclick="openDrawer('custom')">Click here</button>
+      to reach the Event Management Design Team.
+    </div>
+
+    <div class="plate" style="margin:26px 0 56px">
       <div class="art"><img src="assets/rendering-entrance.jpg" alt="Palm-lined arrival drive"></div>
-      <div class="caption"><span>The Arrival · Palm-Lined Drive</span><span>Concept Rendering</span></div>
+      <div class="caption"><span>The Arrival &middot; Palm-Lined Drive</span><span>South Shore Harbor Marketplace</span></div>
     </div>
   </div>
 </section>
@@ -648,8 +748,9 @@
   <div class="inner">
     <div class="logo-card"><img src="assets/logo-public-market-black.png" alt="The Public Market at South Shore Harbor"></div>
     <div class="ftxt">
-      <b>South Shore Harbor Marketplace</b> — waterfront events, private dining, and market experiences in New Orleans.<br>
-      Prepared by <b>Scottmoore — Architect of Record</b>. Concept demonstration only; capacities and rates are illustrative and to be confirmed. Not a live booking system.
+      <b>South Shore Harbor Marketplace</b>. Waterfront events, private dining, and market experiences in New Orleans.<br>
+      Reserve online, request a tour, or reach the Event Management Design Team for custom events.<br>
+      &copy; 2026 South Shore Harbor Marketplace.
     </div>
   </div>
 </footer>
@@ -659,11 +760,11 @@
 <aside class="drawer" id="drawer" aria-label="Request to book">
   <div class="dhead">
     <h3 id="drawerTitle">Request to Book</h3>
-    <button class="dclose" onclick="closeDrawer()">×</button>
+    <button class="dclose" onclick="closeDrawer()">&times;</button>
   </div>
   <div class="dbody">
     <div class="sel-context" id="selContext">Selected space</div>
-    <div class="sel-name" id="selName">Private Room — Open Floor</div>
+    <div class="sel-name" id="selName">Private Room, Open Floor Style</div>
 
     <div class="field">
       <label>Event date</label>
@@ -681,70 +782,36 @@
     </div>
     <div class="field" id="rowNote" style="display:none">
       <label>Tell us about your event</label>
-      <textarea id="fNote" placeholder="Date range, guest count, type of event…"></textarea>
+      <textarea id="fNote" placeholder="Date range, guest count, type of event, spaces you have in mind"></textarea>
     </div>
 
     <div class="summary" id="priceSummary">
-      <div class="line">Illustrative rate <b id="sRate">$275 / hr <span class="tbc">to be confirmed</span></b></div>
+      <div class="line">Rate <b id="sRate">$275 / hr <span class="tbc">to be confirmed</span></b></div>
       <div class="line">Booking subtotal <b id="sSub">$1,375</b></div>
       <div class="line">Deposit to reserve (25%) <b id="sDep">$344</b></div>
-      <div class="line total">Balance at event <b id="sBal">$1,031</b></div>
-      <div class="fine">Pricing shown for demonstration only. Final rates, minimums, and terms are set by ownership — the deposit flow shows how the site can take reservations and payments when live.</div>
+      <div class="line total">Balance before event <b id="sBal">$1,031</b></div>
+      <div class="fine">Add-ons such as the VIP Room, the Powder Room, the Private Sunset Balcony, and Promenade with Covered Bar and Grill pairings can be added to a booking when they are open for the same block. Final rates and terms are confirmed by the venue.</div>
     </div>
 
     <button class="book-btn" id="bookBtn" onclick="submitRequest()">Check Availability &amp; Request</button>
-    <div class="disclaim">You won&rsquo;t be charged — concept preview</div>
+    <div class="disclaim">No payment is taken with this request. The team confirms availability and sends your deposit invoice.</div>
   </div>
 </aside>
-
-<!-- ================= COMING-SOON MODAL ================= -->
-<div class="modal-veil" id="modalVeil" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
-    <div class="mart" id="mArt" style="display:none"><img id="mImg" src="" alt=""></div>
-    <div class="mbody">
-      <div class="mline" id="mLine">Coming soon</div>
-      <h3 id="mTitle">Space</h3>
-      <div class="msf" id="mSf"></div>
-      <p id="mBody"></p>
-      <div class="mrow">
-        <button class="cta" id="mCta" onclick="modalInquire()">Request information</button>
-        <button class="btn-ghost" onclick="closeModal()">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
 /* ---------------- Data ---------------- */
 const SPACES = {
-  'pr-open':     {name:'Private Room — Open Floor Style', context:'First Floor · 1,600 SF', cap:100, rate:275, kind:'book'},
-  'pr-meeting':  {name:'Private Room — Meeting Style',    context:'First Floor · 1,600 SF', cap:85,  rate:275, kind:'book'},
-  'pr-banquet':  {name:'Private Room — Banquet Style',    context:'First Floor · 1,600 SF', cap:60,  rate:275, kind:'book'},
-  'bar-gameday': {name:'Bar & Grill — Game-Day Reservation', context:'Football season · limited availability', cap:40, rate:150, kind:'book'},
-  'second-floor':{name:'Second Floor — Weddings & Signature Events', context:'Opening announcement to come', kind:'inquire'},
-  'main-hall':   {name:'Main Hall', context:'First Floor', kind:'inquire'},
-  'pr2':         {name:'Private Room #2', context:'First Floor · 940 SF', kind:'inquire'},
-  'vip':         {name:'VIP Room', context:'First Floor · stage-side', kind:'inquire'},
-  'market':      {name:'The Public Market — Vendor Leasing', context:'Indoor market hall', kind:'inquire'},
-  'promenade':   {name:'Waterfront Promenade & Market Stalls', context:'Outdoors', kind:'inquire'},
-  'workroom':    {name:'The Lakeside Workroom', context:'Outdoors', kind:'inquire'}
-};
-
-const MODALS = {
-  'main-hall': {title:'Main Hall', line:'More details coming soon', sf:'1,600 SF · stage · two levels of energy',
-    body:'The Main Hall program — concerts, ceremonies, and community events around the stage — is being finalized with the design team. Full layouts, capacities, and booking options will be published here.'},
-  'pr2': {title:'Private Room #2', line:'Leasing opportunities coming soon', sf:'940 SF · waterfront corner room',
-    body:'An intimate corner room overlooking the water — ideal for board meetings, private dinners, and small celebrations. Leasing details are in development.'},
-  'vip': {title:'VIP Room', line:'Future programming in development', sf:'Stage-side lounge',
-    body:'A stage-side lounge for artists, hosts, and premium guests. Programming and access packages are in development.'},
-  'market': {title:'The Public Market', line:'Vendor leasing opportunities coming soon', sf:'Indoor market hall · vendor stalls & pop-ups', img:'assets/rendering-market.jpg',
-    body:'New Orleans’ premier waterfront fresh market — stalls for local makers, growers, and pop-up retail. Vendor leasing terms are being prepared; join the interest list to be first in line.'},
-  'promenade': {title:'Waterfront Promenade & Market Stalls', line:'Leasing opportunities coming soon', sf:'Open-air stalls along the water', img:'assets/rendering-patio.jpg',
-    body:'The open-air side of the Public Market — vendor stalls and pop-ups along the promenade, steps from the water. Weekly market and seasonal leasing opportunities are being planned.'},
-  'workroom': {title:'The Lakeside Workroom', line:'Future programming in development', sf:'Open-air workspace on the water', img:'assets/rendering-remote-working.jpg',
-    body:'Coffee, shade, fast Wi-Fi, and the lake — a daytime work and study space for the neighborhood. Programming and membership details are in development.'},
-  'bar': {title:'Bar & Grill', line:'Game-day reservations opening', sf:'3,600 SF · indoor + patio', img:'assets/rendering-patio.jpg', cta:'Reserve game day', ctaSpace:'bar-gameday',
-    body:'Waterfront dining, cold drinks, and every game on the screens — opening onto the patio and the promenade. Book now for the upcoming football season; limited reservations available.'}
+  'mh1':        {name:'Main Hall, First Floor', context:'First Floor, 11,120 SF', cap:null, rate:500, kind:'book'},
+  'pr-open':    {name:'Private Room, Open Floor Style', context:'First Floor, 1,628 SF', cap:100, rate:275, kind:'book'},
+  'pr-meeting': {name:'Private Room, Meeting Style',    context:'First Floor, 1,628 SF', cap:85,  rate:275, kind:'book'},
+  'pr-banquet': {name:'Private Room, Banquet Style',    context:'First Floor, 1,628 SF', cap:60,  rate:275, kind:'book'},
+  'ppr':        {name:'Patio Private Room', context:'First Floor, 975 SF, waterfront', cap:null, rate:200, kind:'book'},
+  'mh2-open':   {name:'Main Hall, Second Floor', context:'Second Floor, 4,965 SF', cap:null, rate:400, kind:'book'},
+  'balcony':    {name:'Private Sunset Balcony', context:'Second Floor, 742 SF', cap:null, rate:150, kind:'book'},
+  'prom':       {name:'Waterfront Promenade', context:'Exterior, 2,465 SF', cap:null, rate:250, kind:'book'},
+  'work':       {name:'The Lakeside Workroom', context:'Exterior, about 500 SF', cap:null, rate:100, kind:'book'},
+  'bar-gameday':{name:'Covered Bar and Grill, Game Day Reservation', context:'Exterior, 3,665 SF, limited availability', cap:null, rate:150, kind:'book'},
+  'custom':     {name:'Event Management Design Team, Custom Events', context:'Tell us about your vision', kind:'inquire'}
 };
 
 /* ---------------- Router ---------------- */
@@ -765,6 +832,10 @@ function showPage(route, anchor){
     window.scrollTo({top:0});
   }
 }
+function scrollToId(id){
+  const t = document.getElementById(id);
+  if(t) t.scrollIntoView({behavior:'smooth', block:'center'});
+}
 function handleHash(){
   const m = location.hash.match(/^#\/([a-z-]+)/);
   showPage(m ? m[1] : 'home');
@@ -777,7 +848,7 @@ function money(n){ return '$' + Math.round(n).toLocaleString(); }
 
 function openDrawer(key){
   selected = SPACES[key] || selected;
-  document.getElementById('selName').textContent = selected.name.replace(/&/g,'&');
+  document.getElementById('selName').textContent = selected.name;
   document.getElementById('selContext').textContent = selected.context || 'Selected space';
   const book = selected.kind === 'book';
   document.getElementById('drawerTitle').textContent = book ? 'Request to Book' : 'Send an Inquiry';
@@ -789,8 +860,8 @@ function openDrawer(key){
   btn.classList.remove('sent'); btn.disabled = false;
   if(book){
     const g = document.getElementById('fGuests');
-    g.max = selected.cap;
-    g.value = Math.min(selected.cap, +g.value || selected.cap);
+    if(selected.cap){ g.max = selected.cap; g.value = Math.min(selected.cap, +g.value || selected.cap); }
+    else { g.removeAttribute('max'); }
     recalc();
   }
   document.getElementById('overlay').classList.add('open');
@@ -817,7 +888,7 @@ function recalc(){
 function submitRequest(){
   const btn = document.getElementById('bookBtn');
   const book = selected.kind === 'book';
-  btn.textContent = book ? '✓ Request sent — we’ll confirm availability' : '✓ Inquiry sent — we’ll be in touch';
+  btn.textContent = book ? '✓ Request sent. We will confirm availability.' : '✓ Inquiry sent. We will be in touch.';
   btn.classList.add('sent'); btn.disabled = true;
   setTimeout(() => {
     btn.textContent = book ? 'Check Availability & Request' : 'Send Inquiry';
@@ -825,30 +896,10 @@ function submitRequest(){
   }, 2800);
 }
 
-/* ---------------- Coming-soon modal ---------------- */
-let modalKey = null;
-function openModal(key){
-  const m = MODALS[key]; if(!m) return;
-  modalKey = key;
-  document.getElementById('mTitle').textContent = m.title;
-  document.getElementById('mLine').textContent = m.line;
-  document.getElementById('mSf').textContent = m.sf || '';
-  document.getElementById('mBody').textContent = m.body;
-  const art = document.getElementById('mArt');
-  if(m.img){ document.getElementById('mImg').src = m.img; art.style.display = 'block'; }
-  else art.style.display = 'none';
-  document.getElementById('mCta').textContent = m.cta || 'Request information';
-  document.getElementById('modalVeil').classList.add('open');
-}
-function closeModal(){ document.getElementById('modalVeil').classList.remove('open'); }
-function modalInquire(){
-  const m = MODALS[modalKey];
-  closeModal();
-  openDrawer((m && m.ctaSpace) || modalKey);
-}
-document.addEventListener('keydown', e => { if(e.key === 'Escape'){ closeModal(); closeDrawer(); } });
+document.addEventListener('keydown', e => { if(e.key === 'Escape'){ closeDrawer(); } });
 
 handleHash();
 </script>
 </body>
 </html>
+
